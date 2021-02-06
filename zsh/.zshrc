@@ -105,7 +105,16 @@ if [ -f "$HOME/.set_proxy.sh" ]; then
     source "$HOME/.set_proxy.sh"
 fi
 
-ansible-decrypt() {
-    #ansible inline decrypt
-    ansible localhost -m debug -a var="$1" -e "@$2" --vault-password-file "$3"
+
+alias game=' allow_rgb10_configs=false ~/Shadow.AppImage'
+alias gti='git'
+
+init_git_project(){
+    mkdir $1
+    cd $1
+    git init
+    echo "# $1 Project" > README.md
+    git add README.md
+    git commit -m "First Commit"
 }
+alias mkgit='init_git_project'
